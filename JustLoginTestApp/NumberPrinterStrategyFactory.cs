@@ -1,5 +1,4 @@
 ﻿
-using JustLoginTestApp.Console.Extensions;
 
 namespace JustLoginTestApp.Console
 {
@@ -11,26 +10,24 @@ namespace JustLoginTestApp.Console
         private static Dictionary<string, Contracts.INumberPrinterStrategy> printers = new Dictionary<string, Contracts.INumberPrinterStrategy>();
 
      
-        public static Contracts.INumberPrinterStrategy Create(int number)
+        public static Contracts.INumberPrinterStrategy Create(CustomNumber number)
         {
-            if (number.IsMultipleOfThree() && number.IsMultipleOfFive())
+            if (number.IsMultipleOfThree && number.IsMultipleOfFive)
             {
                 return new Implementations.MultipleOfThreeAndFivePrinter();
             }
-            else if (number.IsMultipleOfThree())
+            if (number.IsMultipleOfThree)
             {
                 return new Implementations.MultipleOfThreePrinter();
 
             }
-            else if (number.IsMultipleOfFive())
+            if (number.IsMultipleOfFive)
             {
                 return new Implementations.MultipleOfFivePrinter();
 
             }
-            else
-            {
-                return new Implementations.DefaultPrinter(number);
-            }
+            return new Implementations.DefaultPrinter(number.Number);
+            
         }
     }
 }
