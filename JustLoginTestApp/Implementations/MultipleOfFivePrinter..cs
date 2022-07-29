@@ -1,7 +1,7 @@
 ﻿
 namespace JustLoginTestApp.Console.Implementations
 {
-    public class MultipleOfFivePrinter : Contracts.INumberPrinter
+    public class MultipleOfFivePrinter : Contracts.INumberPrinterStrategy
     {
         public string Print()
         {

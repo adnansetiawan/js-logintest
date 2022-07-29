@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JustLoginTestApp.Console.Contracts
 {
-    public interface INumberPrinter
+    public interface INumberPrinterStrategy
     {
         
         string Print();

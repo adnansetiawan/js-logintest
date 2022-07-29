@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JustLoginTestApp.Console.Implementations
 {
-    public class DefaultPrinter : Contracts.INumberPrinter
+    public class DefaultPrinter : Contracts.INumberPrinterStrategy
     {
         private readonly int _number;
         public DefaultPrinter(int number)

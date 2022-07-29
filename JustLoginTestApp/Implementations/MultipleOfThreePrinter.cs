@@ -1,7 +1,7 @@
 ﻿
 namespace JustLoginTestApp.Console.Implementations
 {
-    public class MultipleOfThreePrinter : Contracts.INumberPrinter
+    public class MultipleOfThreePrinter : Contracts.INumberPrinterStrategy
     {
         public string Print()
         {

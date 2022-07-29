@@ -3,12 +3,12 @@
     /// <summary>
     /// use strategy design pattern
     /// </summary>
-    public class NumberPrinterContext
+    public class NumberPrinterStrategyContext
     {
-        private Contracts.INumberPrinter? _numberPrinter;
+        private Contracts.INumberPrinterStrategy? _numberPrinter;
 
        
-        public void SetStrategy(Contracts.INumberPrinter? numberPrinter)
+        public void SetStrategy(Contracts.INumberPrinterStrategy numberPrinter)
         {
             _numberPrinter = numberPrinter;
         }
