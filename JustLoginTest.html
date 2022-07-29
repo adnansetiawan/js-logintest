@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html,body {
+                height: 100%;
+            }
+            .bold-text   { font-weight: bold;}
+            .highlight-text { background-color:#ff5e00; }
+            .centered {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                
+            }
+        </style>
+    </head>
+<body>
+<div class="centered">
+<form>
+    <p>Please select your favorite marvel character:</p>
+    <input type="radio" name="fav_char" value="Thor">
+    <label for="Thor">Thor</label><br>
+    <input type="radio" name="fav_char" value="Iron Man">
+    <label for="Iron Man">Iron Man</label><br>
+    <input type="radio" name="fav_char" value="Black Panther">
+    <label for="Black Panther">Black Panther</label><br>
+    <input type="radio" name="fav_char" value="Captain America">
+    <label for="Captain America">Captain America</label>
+</form>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  var prevCharText = null;
+  $('input[type=radio][name=fav_char]').click(function(){
+      alert($(this).val());
+      if(prevCharText !== null)
+      {
+        prevCharText.removeClass('bold-text');
+      }
+      $(this).next().addClass('bold-text');
+      prevCharText = $(this).next();
+  });
+  $('input[type=radio][name=fav_char]').hover(function(){  
+        $(this).next().addClass('highlight-text');  
+        }, function(){  
+        $(this).next().removeClass('highlight-text');  
+    });  
+});
+</script>
+</body>
+</html>
