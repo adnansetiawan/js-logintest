@@ -14,7 +14,8 @@ namespace JustLoginTestApp.Console
         {
             if (number.IsMultipleOfThree && number.IsMultipleOfFive)
             {
-                return new Implementations.MultipleOfThreeAndFivePrinter();
+                //simple decorator pattern
+                return new Implementations.MultipleOfThreePrinter(new Implementations.MultipleOfFivePrinter());
             }
             if (number.IsMultipleOfThree)
             {
